@@ -13,7 +13,22 @@ df = pd.read_csv(
     'gdp-life-exp-2007.csv')
 
 
-app.layout = html.Div([
+colors = {
+    'background': '#111111',
+    'text': '#7FDBFF'
+}
+app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
+    html.H1(
+        children='Hello Dash',
+        style={
+            'textAlign': 'center',
+            'color': colors['text']
+        }
+    ),
+    html.Div(children='Dash: A web application framework for Python.', style={
+        'textAlign': 'center',
+        'color': colors['text']
+    }),
     dcc.Graph(
         id='life-exp-vs-gdp',
         figure={
